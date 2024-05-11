@@ -11,14 +11,9 @@ ToDoAppAndroid is a simple Android application that allows users to manage their
 
 ## Screenshots
 
-
-![img_2.png](img_2.png)
-
-
-![img_1.png](img_1.png)
-
-
-![img.png](img.png)
+<img src="img_2.png" alt="Screenshot 1" width="200">
+<img src="img_1.png" alt="Screenshot 2" width="200">
+<img src="img.png" alt="Screenshot 3" width="200">
 
 
 ## Getting Started
