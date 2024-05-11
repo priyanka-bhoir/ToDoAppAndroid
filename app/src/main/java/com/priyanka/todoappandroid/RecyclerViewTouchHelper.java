@@ -3,12 +3,16 @@ package com.priyanka.todoappandroid;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Canvas;
+import android.graphics.Color;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.priyanka.todoappandroid.Adapter.ToDoAdaptor;
+
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
 
@@ -52,8 +56,10 @@ class RecyclerViewTouchHelper extends ItemTouchHelper.SimpleCallback {
     @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
         new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                .addBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.my_background))
-                .addActionIcon(R.drawable.my_icon)
+                .addSwipeLeftBackgroundColor(ContextCompat.getColor(adaptor.getContext(),R.color.colorPrimaryDark))
+                .addSwipeLeftActionIcon(R.drawable.baseline_edit)
+                .addSwipeRightBackgroundColor(Color.RED)
+                .addSwipeLeftActionIcon(R.drawable.baseline_auto_delete_24)
                 .create()
                 .decorate();
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
