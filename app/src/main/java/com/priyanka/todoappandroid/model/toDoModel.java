@@ -1,8 +1,26 @@
 package com.priyanka.todoappandroid.model;
 
-class toDoModel {
+public class toDoModel {
     private String task;
-    private int id,status;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    private int status;
 
     public String getTask() {
         return task;
